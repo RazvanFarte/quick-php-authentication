@@ -18,14 +18,14 @@ if(isset($_GET['logout'])) {
 if(isset($_SESSION['username'])) {
   echo '<p>Logged in as</p>';
   echo '<p>' . $_SESSION['username'] . '</p>';
-  echo '<p><a href="/?logout">Log Out</a></p>';
+  echo '<p><a href="quick-php-authentication/?logout">Log Out</a></p>';
   die();
 }
 
-$client_id = '';
-$client_secret = '';
-$redirect_uri = 'http://localhost:8080/';
-$metadata_url = 'https://dev-123456.oktapreview.com/oauth2/default/.well-known/oauth-authorization-server';
+$client_id = 'removed';
+$client_secret = 'removed';
+$redirect_uri = 'http://localhost/quick-php-authentication/';
+$metadata_url = 'https://dev-removed-admin.okta.com/oauth2/default/.well-known/oauth-authorization-server';
 $metadata = http($metadata_url);
 
 if(isset($_GET['code'])) {
